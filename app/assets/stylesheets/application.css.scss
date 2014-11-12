@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #ffffff;
+}
+
+#content {
+	margin: 0 auto;
+	width: 80%;
+	background: #f1f1f1;
+}
+
+#header {
+	background: #ffffff;
+
+	#logo {
+		float: left;
+		display: block;
+	}
+	#searchbox {
+		float: right;
+		display: block;
+	}
+}
+
+#middle {
+	margin: 2em 0;
+}
+
+#footer {
+	margin: 2em 0;
+	font-size: 0.8em;
+	color: gray;
+	text-align: center;
+}
+
+#top {
+	height: 100px;
+	display: block;
+}
+
+#navigation {
+	height: 25px;
+	display: block;
+	background: #a3a3a3;
+
+	a {
+		text-decoration: none;
+		font: bold;
+		color: white;
+		display: block;
+		float: left;
+		width: 16.6%;
+		text-align: center;
+	}
+}
+
+.pothole-table {
+	display: block;
+	margin: 0 auto;
+	width: 75%;
+
+	.pothole-table-header {
+		border-bottom: 1px solid black;
+		height: 1.1em;
+		margin-bottom: 0.5em;
+	}
+
+	.collapsed {
+		height: 20px;
+	}
+
+	.pid {
+		float: left;
+		width: 30%;
+	}
+
+	.priority {
+		float: left;
+		width: 25%;
+	}
+
+	.age {
+		float: left;
+		width: 25%;
+	}
+
+	.estimate {
+		float: left;
+		width: 20%;
+	}
+}
+

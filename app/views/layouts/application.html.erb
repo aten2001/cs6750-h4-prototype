@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pothole Reporting System Prototype</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="content">
+	<div id="header">
+		<div id="top">
+			<div id="logo">
+				<%= image_tag "pothole.png" %>
+				Pothole Reporting System
+			</div>
+			<div id="searchbox">
+				<form>
+					<input type="text" value="Search" />
+				</form>
+			</div>
+		</div>
+		<div id="navigation">
+			<%= link_to "Home", controller: "home", action: "index" %>
+			<%= link_to "New", controller: "home", action: "index" %>
+			<%= link_to "Backlog", controller: "home", action: "index" %>
+			<%= link_to "Budgeted", controller: "home", action: "index" %>
+			<%= link_to "In Progress", controller: "home", action: "index" %>
+			<%= link_to "Logout", controller: "home", action: "index" %>
+		</div>
+	</div>
+
+	<div id="middle">
+		<%= yield %>
+	</div>
+
+	<div id="footer">
+		Pothole Reporting System Prototype - Matthew Moldavan - CS6750 Fall 2014 Homework 4
+	</div>
+</div>
+
+</body>
+</html>
