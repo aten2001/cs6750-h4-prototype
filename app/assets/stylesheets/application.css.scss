@@ -16,59 +16,147 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #ffffff;
+	font-family: Arial;
 }
+
+a { color: darkblue; }
 
 #content {
 	margin: 0 auto;
 	width: 80%;
 	background: #f1f1f1;
-}
 
-#header {
-	background: #ffffff;
 
-	#logo {
-		float: left;
-		display: block;
+	#header {
+		background: #ffffff;
+
+		#logo {
+			float: left;
+			display: block;
+		}
+		#searchbox {
+			float: right;
+			display: block;
+		}
 	}
-	#searchbox {
-		float: right;
-		display: block;
+
+	#middle {
+		margin: 2em 0;
 	}
-}
 
-#middle {
-	margin: 2em 0;
-}
-
-#footer {
-	margin: 2em 0;
-	font-size: 0.8em;
-	color: gray;
-	text-align: center;
-}
-
-#top {
-	height: 100px;
-	display: block;
-}
-
-#navigation {
-	height: 25px;
-	display: block;
-	background: #a3a3a3;
-
-	a {
-		text-decoration: none;
-		font: bold;
-		color: white;
-		display: block;
-		float: left;
-		width: 16.6%;
+	#footer {
+		margin: 2em 0;
+		font-size: 0.8em;
+		color: gray;
 		text-align: center;
 	}
-}
 
+	#top {
+		height: 160px;
+		display: block;
+		font-size: 1.3em;
+		font-weight: bolder;
+	}
+
+	#navigation {
+		height: 25px;
+		display: block;
+		background: #a3a3a3;
+
+		a {
+			text-decoration: none;
+			font: bold;
+			color: white;
+			display: block;
+			float: left;
+			width: 16.6%;
+			text-align: center;
+		}
+
+		a:hover {
+			color: lightblue;
+		}
+	}
+}
+#delete_modal{
+	display: none;
+	background: #efefef;
+	padding: 1em;
+}
+#review_panel {
+	display: none;
+	width: 800px;
+	background: #efefef;
+	padding: 1em;
+	position: relative;
+	h1 {
+		margin: 0.3em 0;
+		font-size: 1.6em;
+		border-bottom: 1px solid black;
+	}
+	h2 {
+		font-size: 1.3em;
+		margin: 0 0 0.1em 0;
+	}
+	#map {
+		float: left;
+	}
+	#pothole-image {
+		float: left;
+		margin-left: 1em;
+	}
+	#map img, #pothole-image img {
+		border: 1px solid #333333;
+	}
+	#actions {
+		clear: both;
+		text-align: center;
+		width: 400px;
+		margin: 0 auto;
+		height: 100px;
+		.priority {
+			float: left;
+			display: block;
+			margin: 0.5em 1em;
+			width: 100px;
+			height: 30px;
+			cursor: pointer;
+			font-weight: bold;
+		}
+		.low {
+			background: yellow;
+		}
+		.medium {
+			background: orange;
+		}
+		.high {
+			background: red;
+		}
+	}
+	.delete {
+		position: absolute;
+		bottom: 0.3em;
+		right: 0.5em;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	#page2 {
+		.selected-priority {
+			color: #FF3333;
+			font-wight: bolder;
+			font-size: 1.2em;
+		}
+		.option {
+			margin: 1em 0 0.2em;
+		}
+		select {
+			margin-bototm: 1em;
+		}
+		.save {
+			margin-top: 1em;
+		}
+	}
+}
 .pothole-table {
 	display: block;
 	margin: 0 auto;
@@ -84,24 +172,71 @@ body {
 		height: 20px;
 	}
 
+	.maximized {
+		height: 200px;
+	}
+
+	.expand {
+		display: none;
+		float: none;
+		width: 100%;
+		height: 180px;
+		position: relative;
+
+		img {
+		float : left;
+		margin-right: 0.5em;
+		}
+		.comments {
+			float: left;
+			width: 60%;
+			position: relative;
+
+			h3 {
+				margin: 0 0 0.5em 0;
+			}
+		}
+		.modify {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+
 	.pid {
 		float: left;
-		width: 30%;
+		width: 26%;
 	}
 
 	.priority {
 		float: left;
-		width: 25%;
+		width: 18%;
 	}
 
 	.age {
 		float: left;
-		width: 25%;
+		width: 18%;
 	}
 
 	.estimate {
 		float: left;
-		width: 20%;
+		width: 18%;
+	}
+	.crew {
+		float: left;
+		width: 18%;
+	}
+	.selector {
+		float: left;
+		width: 2%;
 	}
 }
 
+
+#mobile-content {
+	background-image: url('background-pattern-1.jpg');
+	width: 320px;
+	height: 480px;
+	color: white;
+	
+}

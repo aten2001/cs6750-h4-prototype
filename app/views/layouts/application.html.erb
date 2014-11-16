@@ -4,6 +4,7 @@
   <title>Pothole Reporting System Prototype</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery.bpopup.min" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -13,7 +14,7 @@
 		<div id="top">
 			<div id="logo">
 				<%= image_tag "pothole.png" %>
-				Pothole Reporting System
+				City of Atlanta Pothole Tracking System
 			</div>
 			<div id="searchbox">
 				<form>
@@ -23,10 +24,9 @@
 		</div>
 		<div id="navigation">
 			<%= link_to "Home", controller: "home", action: "index" %>
-			<%= link_to "New", controller: "home", action: "index" %>
-			<%= link_to "Backlog", controller: "home", action: "index" %>
-			<%= link_to "Budgeted", controller: "home", action: "index" %>
-			<%= link_to "In Progress", controller: "home", action: "index" %>
+			<%= link_to "New", controller: "home", action: "newreports" %>
+			<%= link_to "Outstanding", controller: "home", action: "outstanding" %>
+			<%= link_to "Verified", controller: "home", action: "verified" %>
 			<%= link_to "Logout", controller: "home", action: "index" %>
 		</div>
 	</div>
