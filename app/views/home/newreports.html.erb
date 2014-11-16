@@ -1,0 +1,138 @@
+
+<script>
+	$(document).ready(function(){
+		$('.expand').hide();
+		$('#page2').hide();
+		$('#page3').hide();
+
+		$('.review').click(function(e) {
+			e.preventDefault();
+			$('#page1').show();
+			$('#page2').hide();
+			$('#page3').hide();
+			$('#review_panel').bPopup({
+            modalClose: true,
+            opacity: 0.6,
+            positionStyle: 'fixed' //'fixed' or 'absolute',
+        	});
+        });
+        $('.priority').click(function(e){
+        	$('#page1').hide();
+        	$('#page2').show();
+        });
+        $('.delete').click(function(){
+        	$('#delete_modal').bPopup({
+            modalClose: true,
+            opacity: 0.6,
+            positionStyle: 'fixed' //'fixed' or 'absolute',
+        	});
+        });
+        $('.save').click(function(){
+        	$('#page2').hide();
+        	$('#page3').show();
+        })
+	});
+</script>
+
+<div class="pothole-table">
+	<h1>
+	New Pothole Reports
+	</h1>
+	<div class="pothole-table-header">
+		<div class="pid">Location</div>
+		<div class="age">Age</div>
+	</div>
+	<div class="pothole collapsed">
+		<div class="pid">15 North Ave</div>
+		<div class="age">12 days</div>
+		<div class="review"><a href="">Review</a></div>
+		<div class="hidden expand">
+			<div class="image"><%= image_tag 'pothole-thumb.png' %>
+				<div class="comments">
+					<h3>Comments</h3>
+					<p>None</p>
+				</div>
+			<div class="modify"><a href="">Modify</a> / <a href="">Delete</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="pothole collapsed">
+		<div class="pid">2180 5th Street</div>
+		<div class="age">2 days</div>
+		<div class="review"><a href="">Review</a></div>
+		<div class="hidden expand">
+			<div class="image"><%= image_tag 'pothole-thumb.png' %>
+				<div class="comments">
+					<h3>Comments</h3>
+					<p>None</p>
+				</div>
+			<div class="modify"><a href="">Modify</a> / <a href="">Delete</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="pothole collapsed">
+		<div class="pid">800 Spring Street</div>
+		<div class="age">8 hours</div>
+		<div class="review"><a href="">Review</a></div>
+		<div class="hidden expand">
+			<div class="image"><%= image_tag 'pothole-thumb.png' %>
+				<div class="comments">
+					<h3>Comments</h3>
+					<p>None</p>
+				</div>
+			<div class="modify"><a href="">Modify</a> / <a href="">Delete</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="review_panel">
+		<div id="page1">
+			<h1>Pothole Report: 15 North Ave</h1>
+			<div id="map"><h2>Location</h2>
+				<%= image_tag 'map.png' %>
+			</div>
+			<div id="pothole-image">
+				<h2>Pothole</h2>
+				<%= image_tag 'pothole-image.png' %>
+			</div>
+			<div id="actions">
+				<h2>Priority</h2>
+				<div class="priority low">Low</div>
+				<div class="priority medium">Medium</div>
+				<div class="priority high">High</div>
+			</div>
+			<div class="delete">Not a Pothole</div>
+		</div>
+		<div id="page2">
+			<h1>Pothole Report: 15 North Ave</h1>
+			<h2>Selected Priority:</h2>
+			<div class="selected-priority">High</div>
+			<div class="option">What is the budget for this repair?</div>
+			<input type="text" name="budget" value="$0"/>
+			<div class="option">What crew should repair the pothole?</div>
+			<select>
+				<option value="1">Unassigned</option>
+				<option value="1">Crew 1</option>
+				<option value="1">Crew 2</option>
+				<option value="1">Crew 3</option>
+				<option value="1">Fox Squad</option>
+			</select>
+			<div class="actions">
+				<button class="save">Save</button>
+			</div>
+		</div>
+		<div id="page3">
+			<h1>Pothole Report: 15 North Ave</h1>
+			<div>
+				<%=image_tag 'check.png' %>
+				This report has been saved and it's status changed to outstanding.
+			</div>
+		</div>
+	</div>
+	<div id="delete_modal">
+		<h1>Delete</h1>
+		<p>Are you sure you want to mark this report as not a pothole and delete it?</p>
+		<a href="">Yes</a>
+		<a href="">No</a>
+	</div>
+</div>

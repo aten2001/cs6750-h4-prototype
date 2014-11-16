@@ -1,0 +1,66 @@
+
+<script>
+	$(document).ready(function(){
+		$('.expand').hide();
+
+		$('.pothole').click(function(){
+			if($(this).hasClass('collapsed')){
+				$(this).addClass('maximized');
+				$(this).removeClass('collapsed');
+				$(this).children('.expand').show();
+			}
+			else {
+				$(this).addClass('collapsed');
+				$(this).removeClass('maximized');
+				$(this).children('.expand').hide();
+			}
+
+		});
+
+		$('.modify a').click(function() {
+			$('#review_panel').bPopup({
+            modalClose: false,
+            opacity: 0.6,
+            positionStyle: 'fixed' //'fixed' or 'absolute'
+        	});
+        });
+	});
+</script>
+
+<div class="pothole-table">
+	<h1>
+		Verified (Completed) Reports
+	</h1>
+	<div class="pothole-table-header">
+		<div class="pid">Location</div>
+		<div class="priority">Priority</div>
+		<div class="age">Repaired on</div>
+		<div class="estimate">Estimate</div>
+		<div class="crew">Completed by</div>
+	</div>
+	<div class="pothole collapsed">
+		<div class="pid">15 North Ave</div>
+		<div class="priority">Low</div>
+		<div class="age">Nov 17, 2014</div>
+		<div class="estimate">$1900</div>
+		<div class="crew">Crew 2</div>
+		<div class="selector"><input type="checkbox" name="picked" value="1" /></div>
+		<div class="hidden expand">
+			<div class="image"><%= image_tag 'pothole-thumb.png' %>
+				<div class="comments">
+					<h3>Comments</h3>
+					<p>This pothole is in the center lane and is degrading. Repair needs to be done at night to minimize traffic congestion during the repair. Crew should cover it with a metal plate if unable to complete the repair in the designated time.</p>
+				</div>
+			<div class="modify"><a href="">Modify</a> / <a href="">Delete</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="pothole collapsed">
+		<div class="pid">2180 5th Street</div>
+		<div class="priority">Medium</div>
+		<div class="age">Nov 16, 2014</div>
+		<div class="estimate">$2500</div>
+		<div class="crew">Crew 3</div>
+		<div class="selector"><input type="checkbox" name="picked" value="1" /></div>
+	</div>
+</div>
